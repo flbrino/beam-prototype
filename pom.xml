@@ -37,6 +37,9 @@ SOFTWARE.
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
+    <karaf.version>4.0.7</karaf.version>
+
+    <!-- Beam Stuff -->
     <beam.version>2.4.0</beam.version>
 
     <bigquery.version>v2-rev374-1.22.0</bigquery.version>
@@ -61,6 +64,8 @@ SOFTWARE.
   <modules>
     <module>beam-etl</module>
     <module>test-runners</module>
+    <module>ael-launcher</module>
+    <module>ael-application</module>
   </modules>
 
   <repositories>
