@@ -20,6 +20,10 @@ public class KarafContainer {
     this.karafHome = karafHome;
   }
 
+  /**
+   * Launch Karaf Intance with Parameters
+   * @param args CommandLine Arguments
+   */
   public void launch( String[] args) {
     try {
       String root = new File( karafHome ).getAbsolutePath();
@@ -40,9 +44,13 @@ public class KarafContainer {
     }
   }
 
+  /**
+   * Blocking call that awaits shutdown of Karaf container.
+   */
   public void awaitShutdown(){
     try {
       main.awaitShutdown();
+      main.destroy();
     } catch ( Exception e ) {
       throw new LauncherException("Unexpected error waiting for Karaf container to shut down.", e);
     }

@@ -16,6 +16,7 @@
     <module>ael-assembly</module>
     <module>ael-features</module>
     <module>ael-bundles</module>
+    <module>ael-launcher</module>
   </modules>
 
   <dependencyManagement>

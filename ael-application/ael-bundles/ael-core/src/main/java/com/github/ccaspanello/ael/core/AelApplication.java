@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by ccaspanello on 4/19/18.
@@ -46,7 +47,7 @@ public class AelApplication {
     ServerInfo serverInfo = bundleContext.getService( bundleContext.getServiceReference( ServerInfo.class ) );
     String[] args = serverInfo.getArgs();
 
-    boolean debug= false;
+    boolean debug = false;
 
     Options options = createOptions();
     try {
@@ -69,7 +70,7 @@ public class AelApplication {
     } catch ( AelApplicationException e ) {
       LOG.error( "Error running application: {}", e.getLocalizedMessage() );
     } finally {
-      if(!debug){
+      if ( !debug ) {
         kill();
       }
     }
@@ -77,6 +78,11 @@ public class AelApplication {
   }
 
   private void runOnRunner( String runner, String ktr, Map<String, String> parameters ) {
+
+    List<String> availableRunners = runnerServices.stream().map( f -> f.getName() ).collect( Collectors.toList() );
+    LOG.info( "AvailableRunners: {}", availableRunners );
+    LOG.info("-------------------------");
+    LOG.info("");
     LOG.info( "Running Transformation:" );
     LOG.info( "  * Runner:     {}", runner );
     LOG.info( "  * KTR:        {}", ktr );
@@ -87,6 +93,7 @@ public class AelApplication {
       Result result = runnerService.get().run( ktr, parameters );
       LOG.info( "result: {}", result );
     } else {
+
       throw new AelApplicationException( "Unable to find the specificed runner: " + runner );
     }
   }

@@ -17,6 +17,8 @@
     <module>ael-spark-runner</module>
     <module>ael-direct-runner</module>
     <module>ael-core</module>
+    <module>ael-spark</module>
+    <module>ael-flink</module>
   </modules>
 
 </project>
