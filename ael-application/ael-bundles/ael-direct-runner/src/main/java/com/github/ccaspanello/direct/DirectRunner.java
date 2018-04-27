@@ -2,7 +2,6 @@ package com.github.ccaspanello.direct;
 
 import com.github.ccaspanello.ael.api.Result;
 import com.github.ccaspanello.ael.api.RunnerService;
-import com.github.ccaspanello.ael.api.WordCountService;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
