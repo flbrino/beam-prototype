@@ -21,17 +21,17 @@ trying to prove in this prototype:
   small Karaf container that is embedded in the JAR.  The JAR then automatically extracts that embedded Karaf instance
   if needed (taking advantage of distributed cache).
   
-* Plugins On Demand (Stretch Goal) - Leveraging what we learned in a Hackathon project we can downlaod and load plugins
-  on demand based on which steps are included in the KTR.  This will keep the embedded Karaf instance small and keep
-  launch times to a minimum.  As long as we use the distributed cache plugins will not have to be re-downloaded every
-  time.  This also solves the problem of making sure the server has all of the desired plugins based on what plugins ETL
-  engineers use to develop with on their client machine.
-  
 * Beam Integration - From a customer perspective AEL advertises *write once run everywhere*.  I'd love to bring this 
   concept into AEL so we don't have to rewrite *native* steps for each engine we want to support.  By leveraging Beam we
   can write a native step to the Beam API and run it everywhere (Spark/Flink/Apex/Dataflow).  This also helps our 
   community.  By telling our community to write to Beam APIs a plugin *Bob* writes targeted for Spark can be leveraged
   by *Suzy* running on Dataflow.
+  
+* Plugins On Demand (Stretch Goal) - Leveraging what we learned in a Hackathon project we can downlaod and load plugins
+  on demand based on which steps are included in the KTR.  This will keep the embedded Karaf instance small and keep
+  launch times to a minimum.  As long as we use the distributed cache plugins will not have to be re-downloaded every
+  time.  This also solves the problem of making sure the server has all of the desired plugins based on what plugins ETL
+  engineers use to develop with on their client machine.
   
 ### Project Structure for `ael-application`
 
