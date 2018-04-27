@@ -69,7 +69,6 @@
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Bundle-Version>${project.version}</Bundle-Version>
-            <!--<Import-Package>org.apache.spark.*</Import-Package>-->
           </instructions>
         </configuration>
       </plugin>

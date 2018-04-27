@@ -13,13 +13,51 @@
   <packaging>bundle</packaging>
 
   <properties>
-    <flink.version>1.4.1</flink.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <flink.version>1.4.2</flink.version>
     <slf4j.version>1.7.7</slf4j.version>
-    <!--<log4j.version>1.2.17</log4j.version>-->
+    <log4j.version>1.2.17</log4j.version>
     <scala.binary.version>2.11</scala.binary.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-core</artifactId>
+      <version>${flink.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-java</artifactId>
+      <version>${flink.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-clients_${scala.binary.version}</artifactId>
+      <version>${flink.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
+      <version>${flink.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>com.github.ccaspanello</groupId>
       <artifactId>ael-api</artifactId>
@@ -56,7 +94,7 @@
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Bundle-Version>${project.version}</Bundle-Version>
-            <!--<Import-Package>org.apache.flink.*</Import-Package>-->
+            <Export-Package>com.github.ccaspanello.spark.*</Export-Package>
           </instructions>
         </configuration>
       </plugin>
