@@ -49,6 +49,9 @@
 
     <!-- Main Application -->
     <module>ael-core</module>
+
+    <!-- Custom Commands -->
+    <module>ael-command</module>
   </modules>
 
 </project>

@@ -61,6 +61,14 @@
       <classifier>features</classifier>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.ccaspanello</groupId>
+      <artifactId>ael-command-feature</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>xml</type>
+      <classifier>features</classifier>
+      <scope>runtime</scope>
+    </dependency>
 
   </dependencies>
 
@@ -132,6 +140,7 @@
             <feature>ael-api-feature</feature>
             <feature>ael-runner-feature</feature>
             <feature>ael-core-feature</feature>
+            <feature>ael-command-feature</feature>
           </bootFeatures>
         </configuration>
       </plugin>

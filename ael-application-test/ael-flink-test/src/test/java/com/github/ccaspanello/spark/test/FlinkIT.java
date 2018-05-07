@@ -1,5 +1,6 @@
 package com.github.ccaspanello.spark.test;
 
+import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -22,6 +23,7 @@ public class FlinkIT {
 
   private static final Logger LOG = LoggerFactory.getLogger( FlinkIT.class );
 
+  @Ignore
   @Test
   public void test() {
     // Get Test Artifacts from Target Folder

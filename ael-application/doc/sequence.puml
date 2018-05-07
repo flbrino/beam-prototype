@@ -1,0 +1,22 @@
+@startuml
+hide footbox
+actor User
+participant Launcher
+participant FS as "File System"
+
+box "Karaf Container" #LightBlue
+	participant KM as "Karaf Main"
+	participant RB as "Runner Bundles\n(Multiple)"
+	participant AM as "AEL Main"
+end box
+
+User -> Launcher: Submits KTR
+Launcher -> FS : Extracts Karaf Container
+activate KM
+Launcher -> KM : Starts Karaf
+KM -> RB : Instantiates runner services
+KM -> AM : Runs transformation on runner service
+AM -> KM : Transformation stops
+deactivate KM
+
+@enduml

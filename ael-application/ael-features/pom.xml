@@ -15,6 +15,7 @@
     <module>ael-core-feature</module>
     <module>ael-api-feature</module>
     <module>ael-runner-feature</module>
+    <module>ael-command-feature</module>
   </modules>
 
 

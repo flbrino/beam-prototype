@@ -68,8 +68,10 @@ public class AelApplication {
       LOG.error( "{}.  Please refer to the help documentation.", e.getLocalizedMessage() );
       printHelp( options );
     } catch ( AelApplicationException e ) {
-      LOG.error( "Error running application: {}", e.getLocalizedMessage() );
-    } finally {
+      LOG.error( "Error running AEL Application: {}", e.getLocalizedMessage() );
+    } catch(Exception e){
+      LOG.error(" Unexpected error: {}", e);
+    }finally {
       if ( !debug ) {
         kill();
       }

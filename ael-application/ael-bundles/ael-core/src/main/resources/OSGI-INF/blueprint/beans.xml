@@ -6,11 +6,20 @@
 
   <reference-list id="runnerServices" interface="com.github.ccaspanello.ael.api.RunnerService" />
 
-  <bean id="spoon" class="com.github.ccaspanello.ael.core.AelApplication" scope="singleton"
+  <bean id="aelApplication" class="com.github.ccaspanello.ael.core.AelApplication" scope="singleton"
         init-method="init"
         destroy-method="destroy">
     <argument ref="blueprintBundleContext"/>
     <argument ref="runnerServices" />
   </bean>
+
+  <bean id="runCommandService" class="com.github.ccaspanello.ael.core.RunCommandServiceImpl" scope="singleton"
+        init-method="init"
+        destroy-method="destroy">
+    <argument ref="blueprintBundleContext"/>
+    <argument ref="runnerServices" />
+  </bean>
+
+  <service ref="runCommandService" interface="com.github.ccaspanello.ael.api.RunCommandService" />
 
 </blueprint>

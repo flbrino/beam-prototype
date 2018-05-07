@@ -38,6 +38,10 @@ public class DirectRunner implements RunnerService {
   }
 
   @Override public Result run( String ktr, Map<String, String> parameters ) {
+
+    String output = System.getProperty( "buildDirectory" )+"/test/direct/counts";
+    WordCountMain.main(new String[]{"--inputFile=pom.xml", "--output="+output});
+
     return null;
   }
 }

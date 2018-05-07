@@ -63,10 +63,8 @@ SOFTWARE.
   </properties>
 
   <modules>
-    <module>beam-etl</module>
-    <module>test-runners</module>
     <module>ael-application</module>
-    <!--<module>ael-application-test</module>-->
+    <module>ael-application-test</module>
   </modules>
 
   <repositories>
